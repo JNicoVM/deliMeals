@@ -5,6 +5,9 @@ import './widgets/screenWidgets/categoriesScreenWidget.dart';
 import './widgets/screenWidgets/mealDetailScreenWidget.dart';
 import './utils/consts.dart';
 
+/*
+        Created by Juan Nicolás Vargas 27/02/2021
+*/
 void main() {
   runApp(MyApp());
 }
