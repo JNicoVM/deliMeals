@@ -3,14 +3,10 @@ import 'package:flutter/material.dart';
 import "/dummy_data.dart";
 import '../itemsWidgets/categoryItemWidget.dart';
 
-class CategoriesScreen extends StatelessWidget {
+class CategoriesScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("DeliMeal"),
-      ),
-      body: GridView.builder(
+    return  GridView.builder(
         padding: const EdgeInsets.all(25),
         gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
             maxCrossAxisExtent: 200,
@@ -26,7 +22,6 @@ class CategoriesScreen extends StatelessWidget {
             dummyCategory.color,
           );
         },
-      ),
-    );
+      );
   }
 }

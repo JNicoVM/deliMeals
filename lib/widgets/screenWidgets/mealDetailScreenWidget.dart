@@ -1,7 +1,12 @@
 import 'package:delimeals/models/mealModel.dart';
 import 'package:flutter/material.dart';
 
-class MealDetailScren extends StatelessWidget {
+class MealDetailScreenWidget extends StatelessWidget {
+  final Function toggleFavorite;
+  final Function isFavortite;
+
+  MealDetailScreenWidget(this.toggleFavorite, this.isFavortite);
+
   Widget buildSectionTitle(BuildContext ctx, String text) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 10),
@@ -84,11 +89,17 @@ class MealDetailScren extends StatelessWidget {
                     ],
                   );
                 },
-                itemCount: mealObject.ingredients.length,
+                itemCount: mealObject.steps.length,
               ),
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          isFavortite(mealObject) ? Icons.star : Icons.star_border,
+        ),
+        onPressed: () => toggleFavorite(mealObject),
       ),
     );
   }
